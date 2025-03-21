@@ -30,15 +30,6 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
     }
 
     @Override
-    public List<Funcionario> buscarFuncionarios() {
-        List<Funcionario> funcionarios = em.createQuery("FROM TAB_FUNCIONARIO", Funcionario.class).getResultList();
-        em.close();
-
-        System.out.println(SqlGenerator.gerarSelect(Funcionario.class));
-        return funcionarios;
-    }
-
-    @Override
     public Funcionario buscarPorId(Long id) throws IdNaoEncontradoException {
         Funcionario funcionario = em.find(Funcionario.class, id);
 

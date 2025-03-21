@@ -5,7 +5,6 @@ import br.com.fiap.annotations.Tabela;
 
 import javax.persistence.*;
 
-@MappedSuperclass
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 @Entity
 @Tabela(nome = "TAB_FUNCIONARIO")
@@ -35,6 +34,8 @@ public class Funcionario {
                 ", Salário: " + salario +
                 ", Horas trabalhadas: " + horasTrabalhadas + "]";
     }
+
+    public Funcionario() { }
 
     public Funcionario(String nome, double salario, int horasTrabalhadas) {
         this.nome = nome;

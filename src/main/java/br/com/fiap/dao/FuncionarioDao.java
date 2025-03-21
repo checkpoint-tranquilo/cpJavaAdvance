@@ -12,8 +12,6 @@ public interface FuncionarioDao {
 
     void atualizar(Funcionario funcionario) throws IdNaoEncontradoException, IllegalAccessException;
 
-    List<Funcionario> buscarFuncionarios();
-
     Funcionario buscarPorId(Long id) throws IdNaoEncontradoException;
 
     void remover(Long id) throws IdNaoEncontradoException, IllegalAccessException;
