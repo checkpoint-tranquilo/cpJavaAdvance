@@ -6,6 +6,19 @@ public class Funcionario {
     private double salario;
     private int horasTrabalhadas;
 
+    @Override
+    public String toString() {
+        return "[Nome: " + nome +
+                ", Salário: " + salario +
+                ", Horas trabalhadas: " + horasTrabalhadas + "]";
+    }
+
+    public Funcionario(String nome, double salario, int horasTrabalhadas) {
+        this.nome = nome;
+        this.salario = salario;
+        this.horasTrabalhadas = horasTrabalhadas;
+    }
+
     public String getNome() {
         return nome;
     }
@@ -30,21 +43,9 @@ public class Funcionario {
         this.horasTrabalhadas = horasTrabalhadas;
     }
 
-    public Funcionario(String nome, double salario, int horasTrabalhadas) {
-        this.nome = nome;
-        this.salario = salario;
-        this.horasTrabalhadas = horasTrabalhadas;
-    }
-
     public void calcularSalario(){
         double salarioFinal = horasTrabalhadas * salario;
-        System.out.println("O salário total: " + salarioFinal);
+        System.out.println("O salário total: " + salarioFinal + "R$");
     }
 
-    @Override
-    public String toString() {
-        return "[Nome: " + nome +
-                ", Salário: " + salario +
-                ", Horas trabalhadas: " + horasTrabalhadas + "]";
-    }
 }
