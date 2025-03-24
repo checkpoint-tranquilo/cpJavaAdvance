@@ -1,10 +1,8 @@
-package br.com.fiap.dao;
+package br.com.fiap.dao.funcionario;
 
 import br.com.fiap.entity.Funcionario;
 import br.com.fiap.exceptions.CommitException;
 import br.com.fiap.exceptions.IdNaoEncontradoException;
-
-import java.util.List;
 
 public interface FuncionarioDao {
 

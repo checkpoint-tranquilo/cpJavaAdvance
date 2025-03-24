@@ -1,15 +1,13 @@
 package br.com.fiap.view;
 
-import br.com.fiap.dao.FuncionarioDao;
-import br.com.fiap.dao.FuncionarioDaoImpl;
+import br.com.fiap.dao.funcionario.FuncionarioDao;
+import br.com.fiap.dao.funcionario.FuncionarioDaoImpl;
 import br.com.fiap.entity.Funcionario;
-import br.com.fiap.entity.FuncionarioSenior;
 import br.com.fiap.exceptions.IdNaoEncontradoException;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class Teste {
     public static void main(String[] args) {
@@ -55,6 +53,8 @@ public class Teste {
             System.out.println(e.getMessage());
         }
 
+
+        //Corrigir erro no DELETE
         //Remover um Funcionario
         try {
             dao.remover(1L);

@@ -1,4 +1,4 @@
-package br.com.fiap.dao;
+package br.com.fiap.dao.funcionario;
 
 import br.com.fiap.entity.Funcionario;
 import br.com.fiap.exceptions.CommitException;
@@ -6,9 +6,8 @@ import br.com.fiap.exceptions.IdNaoEncontradoException;
 import br.com.fiap.generator.SqlGenerator;
 
 import javax.persistence.EntityManager;
-import java.util.List;
 
-public class FuncionarioDaoImpl implements FuncionarioDao{
+public class FuncionarioDaoImpl implements FuncionarioDao {
 
     private EntityManager em;
 
