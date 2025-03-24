@@ -24,9 +24,9 @@ public class Teste {
         FuncionarioDao dao = new FuncionarioDaoImpl(em);
 
         //Cadastrar um funcionario
-       Funcionario funcionario = new Funcionario("Fernando", 60.00, 60);
-       funcionario.calcularSalario();
-       //Mostrando os dados
+        Funcionario funcionario = new Funcionario("Fernando", 60.00, 60);
+        funcionario.calcularSalario();
+        //Mostrando os dados
         System.out.println(funcionario);
 
         try {

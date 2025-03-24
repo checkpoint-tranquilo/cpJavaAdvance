@@ -16,6 +16,30 @@ public class SqlGenerator {
         return "SELECT * FROM " + tabela.nome() + ";";
     }
 
+    public static String gerarSelectPorId(Object obj, Long id) {
+        Class<?> clazz = obj.getClass();
+
+        if (!clazz.isAnnotationPresent(Tabela.class)) {
+            throw new IllegalArgumentException("A classe não está anotada com @Tabela");
+        }
+
+        Tabela tabela = clazz.getAnnotation(Tabela.class);
+        String idColuna = null;
+
+        for (Field f : clazz.getDeclaredFields()) {
+            if (f.isAnnotationPresent(Coluna.class) && f.getName().equalsIgnoreCase("id")) {
+                idColuna = f.getAnnotation(Coluna.class).nome();
+                break;
+            }
+        }
+
+        if (idColuna == null) {
+            throw new IllegalArgumentException("A classe não possui um campo ID anotado com @Coluna");
+        }
+
+        return "SELECT * FROM " + tabela.nome() + " WHERE " + idColuna + " = " + id + ";";
+    }
+
     public static String gerarInsert(Object obj) throws IllegalAccessException {
         Class<?> clazz = obj.getClass();
 

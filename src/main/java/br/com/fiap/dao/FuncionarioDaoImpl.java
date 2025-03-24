@@ -37,6 +37,7 @@ public class FuncionarioDaoImpl implements FuncionarioDao{
             System.out.println("Funcionario não encontrado");
         }
 
+        System.out.println(SqlGenerator.gerarSelectPorId(funcionario, id));
         return funcionario;
     }
 
