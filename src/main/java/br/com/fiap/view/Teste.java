@@ -54,7 +54,6 @@ public class Teste {
         }
 
 
-        //Corrigir erro no DELETE
         //Remover um Funcionario
         try {
             dao.remover(1L);
