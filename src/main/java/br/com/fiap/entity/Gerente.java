@@ -16,6 +16,8 @@ public class Gerente extends Funcionario{
     @Column(nullable = false)
     private Setor setor;
 
+    public Gerente() {}
+
     public Gerente(String nome, double salario, int horasTrabalhadas, Setor setor) {
         super(nome, salario, horasTrabalhadas);
         this.setor = setor;
